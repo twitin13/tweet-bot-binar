@@ -1,14 +1,19 @@
-name: Twitter Bot Auto Post - Binar
+name: Twitter Bot Auto Post - binar
 
 on:
   schedule:
-    - cron: "0 */2 * * *"  # Jalan tiap 2 jam
-  workflow_dispatch:        # Bisa juga dijalankan manual
+    # Jalan tiap 2 jam sekali (WIB)
+    - cron: "0 */2 * * *"
+  workflow_dispatch: # Bisa dijalankan manual juga
 
 jobs:
   tweet:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Set timezone to Asia/Jakarta
+        run: sudo timedatectl set-timezone Asia/Jakarta
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -28,3 +33,11 @@ jobs:
           TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
         run: node index.js
 
+  keep_alive:
+    # Job tambahan supaya GitHub nggak pause repo kamu
+    runs-on: ubuntu-latest
+    schedule:
+      - cron: "*/6 * * * *" # Tiap 6 jam jalan biar repo tetap aktif
+    steps:
+      - name: Keep workflow alive
+        run: echo "💤 Keeping bot active at $(date)"
