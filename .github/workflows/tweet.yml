@@ -1,9 +1,11 @@
-name: Twitter Bot Auto Post - binar
+name: Twitter Bot Auto Post - Binar
 
 on:
   schedule:
     # Jalan tiap 2 jam sekali (WIB)
     - cron: "0 */2 * * *"
+    # Job dummy tiap 6 jam biar repo nggak tidur
+    - cron: "0 */6 * * *"
   workflow_dispatch: # Bisa dijalankan manual juga
 
 jobs:
@@ -33,11 +35,5 @@ jobs:
           TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
         run: node index.js
 
-  keep_alive:
-    # Job tambahan supaya GitHub nggak pause repo kamu
-    runs-on: ubuntu-latest
-    schedule:
-      - cron: "*/6 * * * *" # Tiap 6 jam jalan biar repo tetap aktif
-    steps:
-      - name: Keep workflow alive
+      - name: Keep workflow alive (dummy)
         run: echo "💤 Keeping bot active at $(date)"
