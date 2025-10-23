@@ -3,7 +3,7 @@ name: Twitter Bot Auto Post - Binar
 on:
   schedule:
     # Jalan tiap 2 jam sekali (WIB)
-    - cron: "0 */2 * * *"
+    - cron: "10 */2 * * *"
     # Job dummy tiap 6 jam biar repo nggak tidur
     - cron: "0 */6 * * *"
   workflow_dispatch: # Bisa dijalankan manual juga
