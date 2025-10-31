@@ -20,7 +20,7 @@ Cepetan sebelum habis 👇👇
 https://spf.shopee.co.id/1VqgYH9GiM
 https://spf.shopee.co.id/1VqgYH9GiM
 
-t. daget gofood grabfood kode promo go grab shopee food sfood raisa hamish gojek
+t. daget gofood grabfood kode promo go grab shopee food sfood jerome gojek
 `;
 
     // 📸 Upload 1 gambar dari repo
@@ -37,5 +37,6 @@ t. daget gofood grabfood kode promo go grab shopee food sfood raisa hamish gojek
     console.error('❌ Gagal kirim tweet:', error);
   }
 })();
+
 
 
