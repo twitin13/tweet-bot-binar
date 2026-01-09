@@ -13,14 +13,12 @@ const client = new TwitterApi({
   try {
     // 📝 Isi tweet kamu di sini (nanti aku bantu isi sesuai request kamu)
     const textTweet = `
-YOSHINOYA Shopeefood Diskon CUMA 100 PERAK?! 🤯
-Khusus Paket Hot Deal, bisa pick up, maksimal 1 ya~
+Wizzmie Shopeefood Diskon 100% s/d 30rb !!!  Hanya berlaku hari ini ajaa ! 🍜
 
-Cepetan sebelum habis 👇👇
-https://spf.shopee.co.id/1VqgYH9GiM
-https://spf.shopee.co.id/1VqgYH9GiM
+Buruan klaim di sini 👇
+https://spf.shopee.co.id/13zXU3y71
 
-t. daget gofood grabfood kode promo go grab shopee food sfood voucher gojek 
+t. gofood grabfood kode promo go grab shopee food sfood voucher daget dana kaget  
 `;
 
     // 📸 Upload 1 gambar dari repo
@@ -37,6 +35,7 @@ t. daget gofood grabfood kode promo go grab shopee food sfood voucher gojek
     console.error('❌ Gagal kirim tweet:', error);
   }
 })();
+
 
 
 
